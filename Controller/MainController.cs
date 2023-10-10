@@ -12,15 +12,15 @@ namespace LilyMVC.Controller
     {
         public class TipCalculatorController
         {
-            private Tip tip = null;
+            private MainModel tip = null;
 
-            private Display display = null;
+            private MainView display = null;
 
             public TipCalculatorController()
             {
-                display = new Display();
+                display = new MainView();
 
-                tip = new Tip(display.Amount, display.Percent);
+                tip = new MainModel(display.Amount, display.Percent);
 
                 display.TipAmount = tip.CalculateTip();
                 display.Total = tip.CalculateTotal();
